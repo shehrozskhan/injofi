@@ -35,13 +35,13 @@ testModel<-function(abstract,title,keywords,highlights,graphical.abstract) {
   colnames(xx)<-common_col
   # make an empty data frame with the colnames of the training data
   #yy <- read.table(textConnection(''), col.names = colnames(dtms))
-  yy <- data.frame(matrix(ncol = length(dtms), nrow = 0))
-  colnames(yy) <- colnames(dtms)
+  yy <- data.frame(matrix(ncol = length(train.col), nrow = 0))
+  colnames(yy) <- train.col
   zz <- rbind.fill(yy,xx)
   zz[is.na(zz)] <- 0
 
   #Load model
-  xgmodel<-xgb.load('xgboost.model')
+  xgmodel<-xgb.load('injofi.model')
   #Predict
   prob<-predict(xgmodel,as.matrix(zz))
   sprob<-sort(prob,index.return=TRUE,decreasing = TRUE)
