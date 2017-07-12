@@ -1,4 +1,4 @@
 # injofi
 InJoFi: Intelligent Journal Finder
 
-This package is written using Rstudio. It uses 'shiny' library.
+This package is written using RStudio. It uses 'shiny' library.
